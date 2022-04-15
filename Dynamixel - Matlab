@@ -111,7 +111,7 @@ else
     return;
 end
 
-%% Disable Dynamixel Torque (강제종료 시 torque disabled가 안되고 끝남 -> 추가해줌)
+%% Disable Dynamixel Torque
 write1ByteTxRx(port_num, PROTOCOL_VERSION, DXL_ID, ADDR_TORQUE_ENABLE, TORQUE_DISABLE);
 dxl_comm_result = getLastTxRxResult(port_num, PROTOCOL_VERSION);
 dxl_error = getLastRxPacketError(port_num, PROTOCOL_VERSION);
